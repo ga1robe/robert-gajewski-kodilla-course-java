@@ -1,0 +1,8 @@
+textInMessageOfState: "BLACK has no moves. RED won."
+textInMessageOfRedMove: "RED jumped:
+from[5][3] => to[3][1];	"
+textInMessageOfBlackMove: "BLACK moved:
+from[3][1] -> to[4][2];	"
+textInMessageOfRedWins: "RED:	3"
+textInMessageOfBlackWins: "BLACK:	0"
+textInMessageOfSets: "{2021-04-19 at 22:07:45=Set{RED 3 : BLACK 0}}"

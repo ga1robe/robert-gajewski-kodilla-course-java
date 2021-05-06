@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'com.kodilla'
+version '0.0.1-SNAPSHOT'
+mainClassName = 'com.kodilla.good.patterns.flights.Application'
+//mainClassName = 'com.kodilla.good.patterns.food2door.Application'
+//mainClassName = 'com.kodilla.good.patterns.srp.Application'
+//mainClassName = 'com.kodilla.good.patterns.challenges.MovieStore.MovieStoreRun'
+//mainClassName = 'com.kodilla.good.patterns.challenges.eservice.ProductOrderService'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.7.1'
+//    testImplementation group: 'org.mockito', name: 'mockito-junit-jupiter', version: '3.7.7'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+compileJava {
+    options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+}

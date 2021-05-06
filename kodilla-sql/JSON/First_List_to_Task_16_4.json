@@ -1,0 +1,56 @@
+[
+  {
+    "NAME": "ToDo",
+    "SUMMARY": "Microservice for taking temperature",
+    "DESCRIPTION": "Zachary, write and test the microservice taking the temperaure from external service, please",
+    "USER_ID_ASSIGNEDTO": 2
+  },
+  {
+    "NAME": "ToDo",
+    "SUMMARY": "Something is broken",
+    "DESCRIPTION": "Sink is leaking but no visible crack/defect",
+    "USER_ID_ASSIGNEDTO": 2
+  },
+  {
+    "NAME": "ToDo",
+    "SUMMARY": "Something is broken",
+    "DESCRIPTION": "Also the tap is leaking, Zachary please do something about it.",
+    "USER_ID_ASSIGNEDTO": 2
+  },
+  {
+    "NAME": "In Progress",
+    "SUMMARY": "Power recovery",
+    "DESCRIPTION": "Power recovery to Server_room_14 after the power outrage",
+    "USER_ID_ASSIGNEDTO": 4
+  },
+  {
+    "NAME": "In Progress",
+    "SUMMARY": "Optimize searching",
+    "DESCRIPTION": "Archive data searching has to be optimized",
+    "USER_ID_ASSIGNEDTO": 5
+  },
+  {
+    "NAME": "In Progress",
+    "SUMMARY": "Own logger",
+    "DESCRIPTION": "Refactor company logger to meet our needs",
+    "USER_ID_ASSIGNEDTO": 5
+  },
+  {
+    "NAME": "Done",
+    "SUMMARY": "Use Streams",
+    "DESCRIPTION": "use Streams rather than for-loops in predictions",
+    "USER_ID_ASSIGNEDTO": 3
+  },
+  {
+    "NAME": "Done",
+    "SUMMARY": "Temperatures entity",
+    "DESCRIPTION": "Preparing entity for temperatures",
+    "USER_ID_ASSIGNEDTO": 3
+  },
+  {
+    "NAME": "Done",
+    "SUMMARY": "HQLs for analysis",
+    "DESCRIPTION": "Prepared HQL queries for analysis",
+    "USER_ID_ASSIGNEDTO": 3
+  }
+]

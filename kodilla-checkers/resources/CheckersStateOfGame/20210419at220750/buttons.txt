@@ -1,0 +1,3 @@
+isDisableNewGameButton: false
+isDisableResignButton: true
+isDisableSaveSetsButton: false

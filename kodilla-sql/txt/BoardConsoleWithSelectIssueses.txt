@@ -1,0 +1,57 @@
+CREATE TABLE USERS
+(
+    ID   SERIAL PRIMARY KEY,
+    FIRSTNAME   VARCHAR(100),
+    LASTNAME VARCHAR(100)
+);
+
+INSERT INTO USERS (FIRSTNAME, LASTNAME)
+VALUES ("John", "Smith"), ("Zachary", "Lee"), ("Stephanie", "Kovalsky"), ("Thomas", "Landgren"), ("John", "Thomson");
+
+CREATE TABLE ISSUESLISTS
+(
+    ID  SERIAL PRIMARY KEY,
+    NAME   VARCHAR(100)
+);
+
+INSERT INTO ISSUESLISTS (NAME)
+VALUES ("ToDo"),("In Progress"),("Done");
+
+CREATE TABLE ISSUES
+(
+    ID  SERIAL PRIMARY KEY,
+    ISSUESLIST_ID BIGINT UNSIGNED NOT NULL,
+    SUMMARY VARCHAR(100),
+    DESCRIPTION VARCHAR(1024),
+    USER_ID_ASSIGNEDTO BIGINT UNSIGNED NOT NULL,
+
+    FOREIGN KEY (ISSUESLIST_ID) REFERENCES ISSUESLISTS(ID),
+    FOREIGN KEY (USER_ID_ASSIGNEDTO) REFERENCES USERS(ID)
+);
+
+INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES (1, "Microservice for taking temperature", "Zachary, write and test the microservice taking the temperaure from external service, please", 2),
+(1, "Something is broken", "Sink is leaking but no visible crack/defect", 2),
+(1, "Something is broken", "Also the tap is leaking, Zachary please do something about it.", 2),
+(2, "Power recovery", "Power recovery to Server_room_14 after the power outrage", 4),
+(2, "Optimize searching", "Archive data searching has to be optimized", 5),
+(2, "Own logger", "Refactor company logger to meet our needs", 5),
+(3, "Use Streams", "use Streams rather than for-loops in predictions", 3),
+(3, "Temperatures entity", "Preparing entity for temperatures", 3),
+(3, "HQLs for analysis", "Prepared HQL queries for analysis", 3);
+
+COMMIT;
+
+/* First List to Task ; result in ../JSON/First_List_to_Task_16_4.json */
+SELECT IL.NAME, I.SUMMARY, I.DESCRIPTION, I.USER_ID_ASSIGNEDTO FROM ISSUES I JOIN ISSUESLISTS IL on I.ISSUESLIST_ID = IL.ID
+ORDER BY IL.ID, I.ID, I.USER_ID_ASSIGNEDTO;
+
+/* Second List to Task ; result in ../JSON/Second_List_to_Task_16_4.json */
+SELECT U.FIRSTNAME, U.LASTNAME, I.SUMMARY, I.DESCRIPTION FROM ISSUES I JOIN USERS U on U.ID = I.USER_ID_ASSIGNEDTO
+ORDER BY U.ID, I.ID;
+
+/* Third List to Task ; result in ../JSON/Third_List_to_Task_16_4.json */
+SELECT U.FIRSTNAME, U.LASTNAME, COUNT(*) AS TOTAL_POSTS FROM ISSUES I JOIN USERS U on U.ID = I.USER_ID_ASSIGNEDTO
+GROUP BY U.ID
+HAVING COUNT(*) >= 1
+ORDER BY U.ID;

@@ -1,0 +1,56 @@
+[
+  {
+    "FIRSTNAME": "Zachary",
+    "LASTNAME": "Lee",
+    "SUMMARY": "Microservice for taking temperature",
+    "DESCRIPTION": "Zachary, write and test the microservice taking the temperaure from external service, please"
+  },
+  {
+    "FIRSTNAME": "Zachary",
+    "LASTNAME": "Lee",
+    "SUMMARY": "Something is broken",
+    "DESCRIPTION": "Sink is leaking but no visible crack/defect"
+  },
+  {
+    "FIRSTNAME": "Zachary",
+    "LASTNAME": "Lee",
+    "SUMMARY": "Something is broken",
+    "DESCRIPTION": "Also the tap is leaking, Zachary please do something about it."
+  },
+  {
+    "FIRSTNAME": "Stephanie",
+    "LASTNAME": "Kovalsky",
+    "SUMMARY": "Use Streams",
+    "DESCRIPTION": "use Streams rather than for-loops in predictions"
+  },
+  {
+    "FIRSTNAME": "Stephanie",
+    "LASTNAME": "Kovalsky",
+    "SUMMARY": "Temperatures entity",
+    "DESCRIPTION": "Preparing entity for temperatures"
+  },
+  {
+    "FIRSTNAME": "Stephanie",
+    "LASTNAME": "Kovalsky",
+    "SUMMARY": "HQLs for analysis",
+    "DESCRIPTION": "Prepared HQL queries for analysis"
+  },
+  {
+    "FIRSTNAME": "Thomas",
+    "LASTNAME": "Landgren",
+    "SUMMARY": "Power recovery",
+    "DESCRIPTION": "Power recovery to Server_room_14 after the power outrage"
+  },
+  {
+    "FIRSTNAME": "John",
+    "LASTNAME": "Thomson",
+    "SUMMARY": "Optimize searching",
+    "DESCRIPTION": "Archive data searching has to be optimized"
+  },
+  {
+    "FIRSTNAME": "John",
+    "LASTNAME": "Thomson",
+    "SUMMARY": "Own logger",
+    "DESCRIPTION": "Refactor company logger to meet our needs"
+  }
+]

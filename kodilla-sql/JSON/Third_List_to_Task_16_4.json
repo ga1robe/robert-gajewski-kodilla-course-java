@@ -1,0 +1,22 @@
+[
+  {
+    "FIRSTNAME": "Zachary",
+    "LASTNAME": "Lee",
+    "TOTAL_POSTS": 3
+  },
+  {
+    "FIRSTNAME": "Stephanie",
+    "LASTNAME": "Kovalsky",
+    "TOTAL_POSTS": 3
+  },
+  {
+    "FIRSTNAME": "Thomas",
+    "LASTNAME": "Landgren",
+    "TOTAL_POSTS": 1
+  },
+  {
+    "FIRSTNAME": "John",
+    "LASTNAME": "Thomson",
+    "TOTAL_POSTS": 2
+  }
+]
