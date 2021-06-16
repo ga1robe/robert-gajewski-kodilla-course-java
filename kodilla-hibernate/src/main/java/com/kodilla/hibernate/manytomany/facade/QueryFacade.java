@@ -17,10 +17,10 @@ public class QueryFacade {
     private EmployeeDao employees;
 
     public List<Company> findCompanies(String letters) {
-        return companies.findByFewLetters("%" + letters + "%");
+        return companies.searchCompaniesByCharset("%" + letters + "%");
     }
 
     public List<Employee> findEmployees(String letters) {
-        return employees.findByFewLetters("%" + letters + "%");
+        return employees.retrievByFragmentName("%" + letters + "%");
     }
 }

@@ -92,7 +92,7 @@ public class CompanyDaoTestSuite {
         int eveId = eveSmith.getId();
 
 
-        List<Employee> foundInDB = employeeDao.findByLastname("Smith");
+        List<Employee> foundInDB = employeeDao.retrievByLastName("Smith");
         /* Then */
         try {
             assertEquals(2, foundInDB.size());

@@ -14,7 +14,7 @@ import java.util.List;
 @Repository
 public interface EmployeeDao extends CrudRepository<Employee, Integer> {
     @Query(nativeQuery = true)
-    List<Employee> findByFewLetters(@Param("ARG") String letters);
-
-    List<Employee> findByLastname(@Param("LASTNAME") String lastname);
+    List<Employee> retrievByLastName(@Param("ARG") String letters);
+    @Query(nativeQuery = true)
+    List<Employee> retrievByFragmentName(@Param("LASTNAME") String lastname);
 }

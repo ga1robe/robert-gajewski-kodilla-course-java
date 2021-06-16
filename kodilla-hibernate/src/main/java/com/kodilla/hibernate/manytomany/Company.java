@@ -1,6 +1,6 @@
 package com.kodilla.hibernate.manytomany;
 
-import com.kodilla.hibernate.task.Task;
+//import com.kodilla.hibernate.task.Task;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -8,15 +8,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 @NamedNativeQueries({
-@NamedNativeQuery(
-        name = "Company.searchCompaniesByLeftCharset",
-        query = "SELECT * FROM companies WHERE COMPANY_NAME LIKE CONCAT(:NAME , '%')",
-        resultClass = Company.class),
         @NamedNativeQuery(
-                name = "Company.searchCompaniesBy3LeftCharset",
-                query = "select * from companies where CONCAT(left(company_name,3)) LIKE :NAME",
-                resultClass = Company.class)
-        })
+            name = "Company.searchCompaniesByLeftCharset",
+            query = "SELECT * FROM companies WHERE COMPANY_NAME LIKE CONCAT(:NAME , '%')",
+            resultClass = Company.class),
+        @NamedNativeQuery(
+            name = "Company.searchCompaniesByCharset",
+            query = "SELECT * FROM companies WHERE COMPANY_NAME LIKE :NAME",
+            resultClass = Company.class),
+        @NamedNativeQuery(
+            name = "Company.searchCompaniesBy3LeftCharset",
+            query = "select * from companies where CONCAT(left(company_name,3)) LIKE :NAME",
+            resultClass = Company.class)
+    })
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
