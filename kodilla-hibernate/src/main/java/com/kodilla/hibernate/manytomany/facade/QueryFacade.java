@@ -4,25 +4,23 @@ import com.kodilla.hibernate.manytomany.Company;
 import com.kodilla.hibernate.manytomany.Employee;
 import com.kodilla.hibernate.manytomany.dao.CompanyDao;
 import com.kodilla.hibernate.manytomany.dao.EmployeeDao;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class QueryFacade {
-    private final EmployeeDao employeeDao;
-    private final CompanyDao companyDao;
+    @Autowired
+    private CompanyDao companies;
+    @Autowired
+    private EmployeeDao employees;
 
-    public QueryFacade(EmployeeDao employeeDao, CompanyDao companyDao) {
-        this.employeeDao = employeeDao;
-        this.companyDao = companyDao;
+    public List<Company> findCompanies(String letters) {
+        return companies.findByFewLetters("%" + letters + "%");
     }
 
-    public List<Employee> searchEmployeesWithNameLike(String arg) {
-        return employeeDao.searchEmployeeWithNameLike(arg);
-    }
-
-    public List<Company> searchCompaniesByLeftCharset(String arg) {
-        return companyDao.searchCompaniesByLeftCharset(arg);
+    public List<Employee> findEmployees(String letters) {
+        return employees.findByFewLetters("%" + letters + "%");
     }
 }

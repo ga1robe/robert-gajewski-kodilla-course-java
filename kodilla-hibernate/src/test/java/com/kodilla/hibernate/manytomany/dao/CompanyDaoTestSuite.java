@@ -74,13 +74,13 @@ public class CompanyDaoTestSuite {
 
     @Test
     public void testSearchByLastname() {
-        //Given
+        /* Given */
         Employee johnSmith = new Employee("John", "Smith");
         Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
         Employee lindaKovalsky = new Employee("Linda", "Kovalsky");
         Employee eveSmith = new Employee("Eve", "Smith");
 
-        //When
+        /* When */
         employeeDao.save(johnSmith);
         employeeDao.save(stephanieClarckson);
         employeeDao.save(lindaKovalsky);
@@ -91,8 +91,9 @@ public class CompanyDaoTestSuite {
         int lindaId = lindaKovalsky.getId();
         int eveId = eveSmith.getId();
 
-        List<Employee> foundInDB = employeeDao.retrievByLastName("Smith");
-        //Then
+
+        List<Employee> foundInDB = employeeDao.findByLastname("Smith");
+        /* Then */
         try {
             assertEquals(2, foundInDB.size());
         } finally {
