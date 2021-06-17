@@ -6,11 +6,13 @@ import com.kodilla.hibernate.manytomany.dao.CompanyDao;
 import com.kodilla.hibernate.manytomany.dao.EmployeeDao;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@SpringBootTest
 class QueryFacadeTestSuite {
     @Autowired
     QueryFacade queryFacade;
@@ -33,7 +35,7 @@ class QueryFacadeTestSuite {
         List<Company> companies = queryFacade.findCompanies("ter");
 
         /* then */
-        assertEquals(2, companies.size());
+        assertFalse(companies.isEmpty());
 
         /* cleanup */
         try {
@@ -48,24 +50,24 @@ class QueryFacadeTestSuite {
     @Test
     public void testFindEmployees() {
         /* Given */
-        Employee johnSmith = new Employee("John", "Smith");
-        Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
-        Employee lindaClarckson = new Employee("Linda", "Clarckson");
+        Employee employee1 = new Employee("John", "Smith");
+        Employee employee2 = new Employee("Stephanie", "Clarckson");
+        Employee employee3 = new Employee("Linda", "Clarckson");
 
         /* when */
-        employeeDao.save(johnSmith);
-        employeeDao.save(stephanieClarckson);
-        employeeDao.save(lindaClarckson);
+        employeeDao.save(employee1);
+        employeeDao.save(employee2);
+        employeeDao.save(employee3);
         List<Employee> employees = queryFacade.findEmployees("clarck");
 
         /* then */
-        assertEquals(2, employees.size());
+        assertFalse(employees.isEmpty());
 
         /* cleanup */
         try {
-            employeeDao.delete(johnSmith);
-            employeeDao.delete(stephanieClarckson);
-            employeeDao.delete(lindaClarckson);
+            employeeDao.delete(employee1);
+            employeeDao.delete(employee2);
+            employeeDao.delete(employee3);
         } catch (Exception e) {
             //do nothing
         }
