@@ -13,8 +13,8 @@ public class Mentor implements Observer {
     @Override
     public void updateTask(Student student) {
         System.out.println(username + ": New Task in Queue Of " + student.getFirstName() + " "
-                +student.getLastName()+ ":\t"+
-                ", total: " + student.getTaskQueue().size() + " tasks");
+                +student.getLastName()+ ": "+
+                " total: " + student.getTaskQueue().size() + " tasks");
         updateCount++;
 
     }
@@ -27,5 +27,10 @@ public class Mentor implements Observer {
     @Override
     public void showTask(Student student) {
         student.getTaskQueue().peek();
+    }
+
+    @Override
+    public int updateCount() {
+        return updateCount;
     }
 }
