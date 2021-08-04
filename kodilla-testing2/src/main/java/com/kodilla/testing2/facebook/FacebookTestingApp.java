@@ -25,8 +25,8 @@ public class FacebookTestingApp {
 
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 
-        WebElement selectCreateDiv = driver.findElement(By.xpath(XPATH_CREATE_BUTTON_SELECT));
-        selectCreateDiv.click();
+        WebElement selectCreateButton = driver.findElement(By.xpath(XPATH_CREATE_BUTTON_SELECT));
+        selectCreateButton.click();
 
         Select daySelectBox = new Select(driver.findElement(By.xpath(XPATH_DAY_SELECT)));
         Select monthSelectBox = new Select(driver.findElement(By.xpath(XPATH_MONTH_SELECT)));
