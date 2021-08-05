@@ -35,8 +35,8 @@ public class CrudAppTestSuite {
     public void shouldCreateTrelloCard() throws InterruptedException {
         String taskName = createCrudAppTestTask();
         sendTestTaskToTrello(taskName);
-        deleteTestTaskFromCRUDApp(taskName);
         assertTrue(checkTaskExistsInTrello(taskName));
+        deleteTestTaskFromCRUDApp(taskName);
     }
 
     private String createCrudAppTestTask() throws InterruptedException {
