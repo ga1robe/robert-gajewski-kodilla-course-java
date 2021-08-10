@@ -115,7 +115,7 @@ public class CrudAppTestSuite {
 //        driverTrello.findElement(By.id("user")).sendKeys("twoj_login");		        // [3]
 //        driverTrello.findElement(By.id("password")).sendKeys("twoje_haslo");		    // [4]
         driverTrello.findElement(By.id("user")).sendKeys("robert.gajewski@gmail.com");		        // [3]
-        driverTrello.findElement(By.id("password")).sendKeys("Tr3ll0Ro13ert76");		    // [4]
+        driverTrello.findElement(By.id("password")).sendKeys("trello_password");		    // [4]
         WebElement el = driverTrello.findElement(By.id("login"));
         el.submit();									                                // [5]
 
